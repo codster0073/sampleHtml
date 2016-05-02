@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/home.css" title="no title" type="text/css">
+    <title>Register as Developer</title>
+    <style media="screen">
+      .main {
+        padding-left: 10px;
+      }
+
+      label {
+        display: inline-block;
+        width: 150px;
+      }
+      #map {
+        width: 400px;
+        height: 250px;
+        float: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <header>
+        <!--span tags are great for inline text!-->
+        <h1><span class="blueTxt">Elhard</span> Web Services</h1>
+        <h2>Find A Developer <span class="whiteTxt">NOW</span></h2>
+      </header>
+
+      <nav id="menu">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="browse.html">Browse Developers</a></li>
+          <li><a href="register.html">Register As a Developer</a></li>
+          <li><a href="contact2.html">Contact us</a></li>
+        </ul>
+      </nav><!--end of menu div-->
+      <nav id="links">
+        <h3>Links</h3>
+        <ul>
+          <li><a href="team.html">SEO</a></li>
+          <li><a href="team.html">PHP</a></li>
+          <li><a href="team.html">Ajax</a></li>
+          <li><a href="team.html">jQuery</a></li>
+          <li><a href="team.html">Web Design</a></li>
+          <li><a href="team.html">Web Programming</a></li>
+          <li><a href="team.html">Content Creation</a></li>
+          <li><a href="team.html">Internet Marketing</a></li>
+          <li><a href="team.html">XHTML Templates</a></li>
+        </ul>
+      </nav><!--end of links id-->
+    </div>
+
+    <section>
+      <h3>Register As a Developer</h3>
+      <p>Use this form to provide us your location, and we will further consider you as a developer</p>
+      <form action="something.php" method="post">
+        <p>
+          <label for="firstName">First Name: </label>
+          <input type="text" name="firstName" value="">
+        </p>
+        <p>
+          <label for="lastName">Last Name: </label>
+          <input type="text" name="lastName" value="">
+        </p>
+        <p>
+          <label for="email">Email: </label>
+          <input type="email" name="email" value="">
+        </p>
+        <p>
+          <label for="location">Location: </label>
+          <div id="map"></div>
+        </p>
+        <div style="clear:both"></div>
+        <p>
+          <input type="submit" name="register" value="Register">
+        </p>
+      </form>
+      <script>
+      if (navigator.geolocation) {
+  			var timeoutVal = 10 * 1000 * 1000;
+  			navigator.geolocation.getCurrentPosition(
+  				displayPosition,
+  				displayError,
+  				{ enableHighAccuracy: true, timeout: timeoutVal, maximumAge: 0 }
+  			);
+  		}
+  		else {
+  			alert("Geolocation is not supported by this browser");
+  		}
+  		function displayPosition(position) {
+  			var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+  			var options = {
+  				zoom: 10,
+  				center: pos,
+  				mapTypeId: google.maps.MapTypeId.ROADMAP
+  			};
+  			var map = new google.maps.Map(document.getElementById("map"), options);
+  			var marker = new google.maps.Marker({
+  				position: pos,
+  				map: map,
+  				title: "User location"
+  			});
+  			var contentString = "<b>Timestamp:</b> " + parseTimestamp(position.timestamp) + "<br/><b>User location:</b> lat " + position.coords.latitude + ", long " + position.coords.longitude + ", accuracy " + position.coords.accuracy;
+  			var infowindow = new google.maps.InfoWindow({
+  				content: contentString
+  			});
+  			google.maps.event.addListener(marker, 'click', function() {
+  				infowindow.open(map,marker);
+  			});
+  		}
+  		function displayError(error) {
+  			var errors = {
+  				1: 'Permission denied',
+  				2: 'Position unavailable',
+  				3: 'Request timeout'
+  			};
+  			alert("Error: " + errors[error.code]);
+  		}
+  		function parseTimestamp(timestamp) {
+  			var d = new Date(timestamp);
+  			var day = d.getDate();
+  			var month = d.getMonth() + 1;
+  			var year = d.getFullYear();
+  			var hour = d.getHours();
+  			var mins = d.getMinutes();
+  			var secs = d.getSeconds();
+  			var msec = d.getMilliseconds();
+  			return day + "." + month + "." + year + " " + hour + ":" + mins + ":" + secs + "," + msec;
+  		}
+  	</script>
+    </section>
+
+
+    <div style="clear:both"></div>
+    <footer>
+      Copyright 2016 Elhard Web Services
+    </footer>
+  </body>
+</html>

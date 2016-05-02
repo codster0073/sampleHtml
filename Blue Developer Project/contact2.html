@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="css/home.css" title="no title" type="text/css">
+  <title>Elhard Web Service Home</title>
+  <style media="screen">
+    .main {
+      padding-left: 10px;
+    }
+
+    label {
+      display: inline-block;
+      width: 150px;
+    }
+  </style>
+</head>
+  <body>
+    <div id="container">
+      <header>
+        <!--span tags are great for inline text!-->
+        <h1><span class="blueTxt">Elhard</span> Web Services</h1>
+        <h2>Find A Developer <span class="whiteTxt">NOW</span></h2>
+      </header><!--end of header div-->
+
+      <nav id="menu">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="browse.html">Browse Developers</a></li>
+          <li><a href="register.html">Register As a Developer</a></li>
+          <li><a href="contact2.html">Contact us</a></li>
+        </ul>
+      </nav><!--end of menu div-->
+      <nav id="links">
+        <h3>Links</h3>
+        <ul>
+          <li><a href="team.html">SEO</a></li>
+          <li><a href="team.html">PHP</a></li>
+          <li><a href="team.html">Ajax</a></li>
+          <li><a href="team.html">jQuery</a></li>
+          <li><a href="team.html">Web Design</a></li>
+          <li><a href="team.html">Web Programming</a></li>
+          <li><a href="team.html">Content Creation</a></li>
+          <li><a href="team.html">Internet Marketing</a></li>
+          <li><a href="team.html">XHTML Templates</a></li>
+        </ul>
+      </nav><!--end of links id-->
+
+      <section>
+        <h1>Contact Form</h1>
+        <div class="main">
+          <h3>contact us</h3>
+          <p>Please use this form to contact our friendly customer service</p>
+
+          <form class="form">
+            <p>
+              <label for="name">Full Name: </label>
+              <input type="text" name="name">
+            </p>
+            <p>
+              <label for="email">Email Adress: </label>
+              <input type="email" name="email">
+            </p>
+            <p>
+              <label for="phone">Phone number:</label>
+              <input type="text" name="phone">
+            </p>
+            <p>
+              <label for="time">Best time to call</label>
+              <input type="radio" name="time" value="morning">Morning
+              <input type="radio" name="time" value="afternoon" checked="afternoon">Afternoon
+              <input type="radio" name="time" value="evening">Evening
+            </p>
+            <p>
+              <label for="city">City: </label>
+              <input list="city">
+              <datalist id="city">
+                <option value="New York">
+                <option value="Fargo">
+                <option value="Detroit Lakes">
+                <option value="Audubon">
+                <option value="Moorhead">
+                <option value="Perham">
+                <option value="Bemidgi">
+                <option value="Pelican Rapids">
+              </datalist>
+            </p>
+            <p>
+              <label for="Adress">Street Adress: </label>
+              <input type="text" name="Adress" value="">
+            </p>
+            <fieldset>
+              <legend>Project Preferences</legend>
+              <p>
+                <label for="budget">Budget</label>
+                <select class="budget" name="budget" type="list">
+                  <option>Select One</option>
+                  <option value="unknown">Need more info</option>
+                  <option value="100">$100</option>
+                  <option value="500">$500</option>
+                  <option value="1000">$1,000</option>
+                  <option value="2500">$2,500</option>
+                  <option value="5000">$5,000</option>
+                  <option value="7500">$7,500</option>
+                  <option value="10000">$10,000</option>
+                </select>
+              </p>
+              <p>
+                <script type="text/javascript">
+                  function updateTextInput(val) {
+                    document.getElementById('textInput').value=val;
+                  }
+                </script>
+                <label for="hours">Hours needed weekly: </label>
+                <input id="hours" type="range" name="hours" value="40" min="5" max="160" step="5" onchange="updateTextInput(this.value)">
+                <input id="textInput" type="text" name="hoursNeeded" value="">
+              </p>
+              <p>
+                <label for="services">Services Needed: (Check all that apply) </label>
+                <table>
+                  <tr>
+                    <td>
+                      <input type="checkbox" name="services" value="html">html
+                    </td>
+                    <td>
+                      <input type="checkbox" name="services" value="PHP">PHP
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <input type="checkbox" name="services" value="Javascript">Javascript
+                    </td>
+                    <td>
+                      <input type="checkbox" name="services" value="Ruby On Rails">Ruby On Rails
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <input type="checkbox" name="services" value="C++">C++
+                    </td>
+                    <td>
+                      <input type="checkbox" name="services" value="other service">other
+                    </td>
+                  </tr>
+                </table>
+              </p>
+              <p>
+                <label for="website">(leave as if you need a website) <br>Current Website: </label>
+                <input type="url" name="website" value="http://ElhardWebServices.com">
+              </p>
+              <p>
+                <label for="startDate">Service Start Date: </label>
+                <input type="date" name="startDate" value="">
+              </p>
+              <p>
+                <label for="pages">Number of Pages: </label>
+                <input type="number" name="pages" value="">
+              </p>
+              <p>
+                <label for="color1">Main Page Color: </label>
+                <input type="color" name="color1" value="">
+              </p>
+              <p>
+                <label for="color2">Secondary Color: </label>
+                <input type="color" name="color2" value="">
+              </p>
+            </fieldset>
+
+            <p>
+              <input type="submit" name="submit" value="Submit Form">
+            </p>
+          </form>
+        </div>
+      </section>
+    </div>
+    <div style="clear:both"></div>
+    <footer>
+      Copyright 2016 Elhard Web Services
+    </footer>
+  </body>
+</html>
